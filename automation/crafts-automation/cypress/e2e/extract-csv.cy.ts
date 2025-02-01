@@ -1,4 +1,4 @@
-import { getCurrentDateParams } from "@utils/dataGenerator";
+import { getCurrentDateParams } from "@utils/dateUtils";
 
 describe("Extract CSV", () => {
   beforeEach(() => {
@@ -20,6 +20,6 @@ describe("Extract CSV", () => {
 
     cy.login(USERNAME, PASSWORD);
     cy.navigateToAttendancePage();
-    cy.traverseDate(monthIndex, year, monthName);
+    cy.traverseDate(monthIndex, monthName, year);
   });
 });

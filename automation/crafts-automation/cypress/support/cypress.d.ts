@@ -4,8 +4,8 @@ declare namespace Cypress {
     navigateToAttendancePage(): Chainable<Element>;
     traverseDate(
       month: number,
-      year: number,
-      monthName: string
+      monthName: string,
+      year: number
     ): Chainable<Element>;
     clickDateInput(monthName: string): Chainable<Element>;
   }

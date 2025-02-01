@@ -1,26 +1,9 @@
-function getExpectedDaysInMonth(month: number, year: number): string[] {
-  const date = new Date(year, month - 1, 1);
-  const days: string[] = [];
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  while (date.getMonth() === month - 1) {
-    days.push(date.toLocaleDateString("en-US", options));
-    date.setDate(date.getDate() + 1);
-  }
-  return days;
-}
-
-function padNumber(num: number): string {
-  return num < 10 ? "0" + num : num.toString();
-}
+import { getExpectedDaysInMonth } from "@utils/dateUtils";
+import { padNumber } from "@utils/helpers";
 
 Cypress.Commands.add(
   "traverseDate",
-  (month: number, year: number, monthName: string) => {
+  (month: number, monthName: string, year: number) => {
     const expectedDays = getExpectedDaysInMonth(month, year);
     const monthPadded = padNumber(month);
     const timeoutTime = 5000;
