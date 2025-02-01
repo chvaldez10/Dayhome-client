@@ -1,7 +1,9 @@
-const { defineConfig } = require("cypress");
-require("dotenv").config();
+import { defineConfig } from "cypress";
+import dotenv from "dotenv";
 
-module.exports = defineConfig({
+dotenv.config();
+
+export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // Adding environment variables to Cypress config

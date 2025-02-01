@@ -1,4 +1,4 @@
-Cypress.Commands.add("login", (username, password) => {
+Cypress.Commands.add("login", (username: string, password: string) => {
   cy.log("Attempting to login");
   cy.get('.form-group input[placeholder="Email"]').type(username);
   cy.get('.form-group input[placeholder="Password"]').type(password);
