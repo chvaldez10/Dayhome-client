@@ -14,6 +14,6 @@ describe("Extract CSV", () => {
   it("Extract csv files", () => {
     cy.login(Cypress.env("username"), Cypress.env("password"));
     cy.navigateToAttendancePage();
-    cy.traverseDate(9, 2024, "September");
+    cy.traverseDate(1, 2025, "January");
   });
 });
