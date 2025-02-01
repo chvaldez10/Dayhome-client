@@ -3,6 +3,14 @@ import { padNumber } from "@utils/helpers";
 
 Cypress.Commands.add(
   "traverseDate",
+  /**
+   * Traverses through the days of a specified month and year,
+   * clicking on each day and downloading a corresponding CSV file.
+   *
+   * @param {number} month - The month to traverse (1-12).
+   * @param {string} monthName - The name of the month (e.g., "January").
+   * @param {number} year - The year to traverse.
+   */
   (month: number, monthName: string, year: number) => {
     const expectedDays = getExpectedDaysInMonth(month, year);
     const monthPadded = padNumber(month);
@@ -12,9 +20,6 @@ Cypress.Commands.add(
     cy.log(`Traversing date for month: ${month} and year: ${year}`);
     cy.clickDateInput(monthName);
 
-    // GIVEN expected days array
-    // WHEN we traverse the array and click on each day
-    // THEN all days in the array should all exist
     expectedDays.forEach((day, numDays) => {
       numDays += 1;
       const dayPadded = padNumber(numDays);
