@@ -1,3 +1,5 @@
+import { getCurrentDateParams } from "@utils/dataGenerator";
+
 describe("Extract CSV", () => {
   beforeEach(() => {
     cy.clearAllSessionStorage();
@@ -12,8 +14,12 @@ describe("Extract CSV", () => {
   });
 
   it("Extract csv files", () => {
-    cy.login(Cypress.env("username"), Cypress.env("password"));
+    const USERNAME = Cypress.env("username");
+    const PASSWORD = Cypress.env("password");
+    const { monthIndex, year, monthName } = getCurrentDateParams();
+
+    cy.login(USERNAME, PASSWORD);
     cy.navigateToAttendancePage();
-    cy.traverseDate(1, 2025, "January");
+    cy.traverseDate(monthIndex, year, monthName);
   });
 });

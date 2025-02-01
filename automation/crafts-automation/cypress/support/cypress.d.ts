@@ -1,4 +1,3 @@
-// cypress/support/cypress.d.ts
 declare namespace Cypress {
   interface Chainable {
     login(username: string, password: string): Chainable<Element>;
