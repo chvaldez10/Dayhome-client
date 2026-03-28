@@ -16,5 +16,5 @@ Cypress.Commands.add("login", (username: string, password: string) => {
   cy.pause();
 
   cy.log(`Resuming login after GAPTCHA`);
-  cy.get('button[id="submitBtn"]').click();
+  // cy.get('button[id="submitBtn"]').click();
 });
