@@ -15,7 +15,7 @@ Cypress.Commands.add(
     const expectedDays = getExpectedDaysInMonth(month, year);
     const monthPadded = padNumber(month);
     const timeoutTime = 5000;
-    const waitTime = 3000;
+    const waitTime = 6000;
 
     cy.log(`Traversing date for month: ${month} and year: ${year}`);
     cy.clickDateInput(monthName);
